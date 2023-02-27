@@ -1,2 +1,3 @@
 class ToiletsController < ApplicationController
+
 end
