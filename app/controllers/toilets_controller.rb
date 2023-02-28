@@ -28,13 +28,12 @@ class ToiletsController < ApplicationController
   end
 
   def update
-
+    @toilet = Toilet.update(toilet_params)
+    redirect_to toilet_path(@toilet)
   end
 
   def destroy
-    @toilet = Toilet.find(params[:id])
-    @toilet.destroy
-    redirect_to toilets_path, status: :see_other
+
   end
 
   private
