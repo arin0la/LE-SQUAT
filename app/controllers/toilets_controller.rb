@@ -1,8 +1,8 @@
 class ToiletsController < ApplicationController
-  before_action create:
+  before_action :set_toilet_id, only: [:show, :edit, :update]
 
   def show
-    @toilet = Toilet.find(params[:id])
+
   end
 
   def index
@@ -21,6 +21,18 @@ class ToiletsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+
   end
 
   private
