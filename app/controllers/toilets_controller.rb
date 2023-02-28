@@ -19,6 +19,12 @@ class ToiletsController < ApplicationController
     redirect_to toilet_path(@toilet)
   end
 
+  def delete
+    @toilet = Toilet.find(params[:id])
+    @toilet.destroy
+    redirect_to toilets_path, status: :see_other
+  end
+
   private
 
   def set_toilet_id
