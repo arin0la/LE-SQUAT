@@ -1,3 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :toilet, :user
+  belongs_to :toilet
+  belongs_to :user
 end
