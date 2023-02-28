@@ -1,4 +1,8 @@
 <h1>This is my toilet show page</h1>
+<%= link_to "Delete",
+  toilet_path(@toilet),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
 <%# put picture here %>
 <ul>
   <li><%= @toilet.name %></li>
