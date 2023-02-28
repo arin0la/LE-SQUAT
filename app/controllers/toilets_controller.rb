@@ -1,5 +1,5 @@
 class ToiletsController < ApplicationController
-  before_action :set_toilet_id, only: [:show, :edit, :update]
+  before_action :set_toilet, only: [:show, :edit, :update]
 
   def show
 
@@ -28,7 +28,7 @@ class ToiletsController < ApplicationController
   end
 
   def update
-    @toilet = Toilet.update(toilet_params)
+    @toilet.update(toilet_params)
     redirect_to toilet_path(@toilet)
   end
 
@@ -38,7 +38,7 @@ class ToiletsController < ApplicationController
 
   private
 
-  def set_toilet_id
+  def set_toilet
     @toilet = Toilet.find(params[:id])
   end
 
