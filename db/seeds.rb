@@ -6,12 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
+puts 'cleaning the database...'
+User.destroy_all
+Toilet.destroy_all
 
+puts 'creating a user...'
 user = User.create(email:"needtoilet@gmail.com", password:123456)
+puts "creating toilets....."
 10.times do
-toilet = Toilet.create(
-  name: Faker::Ancient.god,
-  description: Faker::Quote.most_interesting_man_in_the_world,
-  user_id: user.id
-)
+  toilet = Toilet.create(
+    name: Faker::Ancient.god,
+    description: Faker::Quote.most_interesting_man_in_the_world,
+    price: rand(100),
+    user_id: user.id
+  )
 end
+puts "Created #{Toilet.count} toilets"

@@ -1,11 +1,17 @@
 <h1>This is my toilet show page</h1>
-<%= link_to "Delete",
-  toilet_path(@toilet),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
 <%# put picture here %>
 <ul>
   <li><%= @toilet.name %></li>
   <li><%= @toilet.description %></li>
   <li><%= @toilet.price %></li>
 </ul>
+
+<% if current_user == @toilet.user %>
+  <%= link_to "Delete",
+    toilet_path(@toilet),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+
+  <%= link_to "Update",
+  edit_toilet_path(@toilet) %>
+<% end %>
