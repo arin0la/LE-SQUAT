@@ -1,7 +1,9 @@
 <% @toilets.each do |toilet| %>
-<div>
-  <strong><%= toilet.name %></strong>
-  <br><%= toilet.description %>
-  <br><p>price: <%= toilet.price %></p>
-</div>
+  <%= link_to toilet_path(toilet) do %>
+        <div>
+          <strong><%= toilet.name %></strong>
+          <br><%= toilet.description %>
+          <br><p>price: <%= toilet.price %></p>
+        </div>
+  <% end %>
 <% end %>
