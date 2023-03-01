@@ -1,12 +1,13 @@
-<%= link_to "back", toilets_path %>
-
+<div>
+  <%= link_to "Back", toilets_path, class: "btn btn-flat" %>
+</div>
 <h1><%= @toilet.name %></h1>
 <%# put picture here %>
 <div class="card-product">
 <img src="https://bouncymustard.com/wp-content/uploads/2020/10/2-funny-bathroom-design-fail.jpg" />
   <div class="card-product-infos">
     <p><strong><%= @toilet.description %></strong>
-        <%= @toilet.price %></p>
+    <p><%= @toilet.price %></p>
   </div>
 </div>
 
