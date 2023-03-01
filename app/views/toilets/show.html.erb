@@ -13,8 +13,7 @@
 
 
 <% if current_user == @toilet.user %>
-  <%= link_to "Delete",
-    toilet_path(@toilet),
+  <%= link_to "Delete", toilet_path(@toilet), class: "btn btn-flat",
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
 
