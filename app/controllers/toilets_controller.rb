@@ -2,7 +2,6 @@ class ToiletsController < ApplicationController
   before_action :set_toilet, only: [:show, :edit, :update]
 
   def show
-
   end
 
   def index

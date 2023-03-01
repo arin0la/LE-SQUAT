@@ -1,12 +1,15 @@
 <%= link_to "back", toilets_path %>
 
-<h1>This is my toilet show page</h1>
+<h1><%= @toilet.name %></h1>
 <%# put picture here %>
-<ul>
-  <li><%= @toilet.name %></li>
-  <li><%= @toilet.description %></li>
-  <li><%= @toilet.price %></li>
-</ul>
+<div class="card-product">
+<img src="https://bouncymustard.com/wp-content/uploads/2020/10/2-funny-bathroom-design-fail.jpg" />
+  <div class="card-product-infos">
+    <p><strong><%= @toilet.description %></strong>
+        <%= @toilet.price %></p>
+  </div>
+</div>
+
 
 <% if current_user == @toilet.user %>
   <%= link_to "Delete",
