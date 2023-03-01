@@ -17,7 +17,7 @@
     toilet_path(@toilet),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
-
-  <%= link_to "Update",
-  edit_toilet_path(@toilet) %>
+<div>
+  <%= link_to "Update",  edit_toilet_path(@toilet), class: "btn btn-flat" %>
+</div>
 <% end %>
