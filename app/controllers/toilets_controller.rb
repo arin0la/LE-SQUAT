@@ -2,6 +2,7 @@ class ToiletsController < ApplicationController
   before_action :set_toilet, only: [:show, :edit, :update]
 
   def show
+    @booking = Booking.new
   end
 
   def index
@@ -35,6 +36,10 @@ class ToiletsController < ApplicationController
     @toilet = Toilet.find(params[:id])
     @toilet.destroy
     redirect_to toilets_path, status: :see_other
+  end
+
+  def mytoilet
+    @toilets = Toilet.where(user_id: current_user.id)
   end
 
   private
