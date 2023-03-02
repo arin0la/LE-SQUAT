@@ -1,14 +1,15 @@
-
-<div class="card">
+<div class="container-new-form">
+<div class="form-new">
 <%= simple_form_for(@toilet) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :price %>
    <%# <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+   <div class="button-div">
+  <%= f.submit  class: "btn-new"%>
+  </div>
 <% end %>
 
-<%= render "shared/footer" %>
 
 </div>
-
+</div>

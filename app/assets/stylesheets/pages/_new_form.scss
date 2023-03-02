@@ -1,8 +1,36 @@
 
 
-#new_toilet {
+.form-new {
   margin-top: 100px;
-  background-color: white;
-  width: 1000px;
-  border-radius: 5%;
+  background-color: rgb(255, 255, 255);
+  width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 100px auto;
+  margin-bottom: 100px;
+}
+
+.container-new-form {
+  width: 600px;
+  margin: auto;
+}
+
+.button-div {
+  text-align: center;
+}
+
+.btn-new {
+  text-align: center;
+  background-color: #ffb700;
+  padding: 8px;
+  border: none;
+  // box-shadow: ;
+  border-radius: 15px;
+  color: white;
+
+}
+
+.btn-new:hover {
+  transition: 0.5s;
+  background-color: #ffa200;
 }
