@@ -11,12 +11,12 @@ User.destroy_all
 Toilet.destroy_all
 
 puts 'creating a user...'
-user = User.create(email:"needtoilet@gmail.com", password:123456)
+user = User.create(email: "needtoilet@gmail.com", password: 123456)
 puts "creating toilets....."
-10.times do
+5.times do
   toilet = Toilet.create(
-    name: Faker::Ancient.god,
-    description: Faker::Quote.most_interesting_man_in_the_world,
+    name: Faker::Name.first_name,
+    description: Faker::Emotion.adjective,
     price: rand(100),
     user_id: user.id
   )
