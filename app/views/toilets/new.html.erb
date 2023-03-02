@@ -1,15 +1,13 @@
 <div class="container-new-form">
-<div class="form-new">
-<%= simple_form_for(@toilet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-   <%# <%= f.input :photo, as: :file %>
-   <div class="button-div">
-  <%= f.submit  class: "btn-new"%>
+  <div class="form-new">
+    <%= simple_form_for(@toilet) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%# <%= f.input :photo, as: :file %>
+      <div class="button-div">
+      <%= f.submit  class: "btn-new"%>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
-
-</div>
 </div>
