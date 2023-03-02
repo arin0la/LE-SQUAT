@@ -2,6 +2,12 @@
 @import "home";
 @import "show";
 
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+}
+
 .card-toilet-info {
   text-decoration: none;
 }
@@ -62,11 +68,17 @@ a {
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 40px auto;
+  gap: 1.5em;
+  width: 1000px;
+
+}
+
+body {
+  background-color: #BDE0FE;
+
 }
 
 // Smallest device
@@ -93,13 +105,13 @@ a {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
