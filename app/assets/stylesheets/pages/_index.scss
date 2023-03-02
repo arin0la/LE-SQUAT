@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+@import "new_form";
 
 h1 {
   color: white;
@@ -90,10 +91,10 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin: 40px auto;
-  gap: 1.5em;
-  width: 1300px;
 
+    margin: 40px auto;
+    gap: 1.5em;
+    width: 1268px;
 }
 
 body {
