@@ -1,4 +1,7 @@
-<h1><strong>My Toilets</strong></h1>
+<div class="card-category-no-curve" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.securitysafetyproducts.co.uk/images/upload/products_image2-1672-d.jpg)">
+  My Toilets
+</div>
+<%# <h1><strong>My Toilets</strong></h1> %>
   <div class="cards">
     <% @toilets.each do |toilet| %>
       <%= link_to toilet_path(toilet) do %>
@@ -17,4 +20,3 @@
       <% end %>
     <% end %>
   </div>
-
