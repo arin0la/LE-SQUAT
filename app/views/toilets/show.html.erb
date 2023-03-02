@@ -13,6 +13,7 @@
   </div>
 
 
+
   <% if current_user == @toilet.user %>
     <%= link_to "Delete", toilet_path(@toilet), class: "btn btn-flat",
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
@@ -25,3 +26,4 @@
   <% if current_user != @toilet.user %>
     <%= link_to "Book", new_toilet_booking_path(@toilet), class: "btn btn-flat" %>
   <% end %>
+  <%= render "shared/footer" %>
