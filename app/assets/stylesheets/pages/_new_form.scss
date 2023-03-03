@@ -16,55 +16,13 @@
   margin: auto;
 }
 
-.button-div {
-  text-align: center;
-}
-
-.btn-new {
-  text-align: center;
-  background-color: #ffb700;
-  padding: 8px;
-  border: none;
-  // box-shadow: ;
-  border-radius: 15px;
-  color: white;
-  width: 114.53px;
-
-}
-
-.btn-new:hover {
-  transition: 0.5s;
-  background-color: #ffa200;
-}
-
-.sign-up {
-  color: white;
-  text-align: center;
-  margin-top:100px;
-}
-
 .shared-links {
   padding-top: 10px;
   text-align: center;
 }
 
-.btn-reset {
-  text-align: center;
-  background-color: #ffb700;
-  padding: 8px;
-  border: none;
-  // box-shadow: ;
-  border-radius: 15px;
+.sign-up {
   color: white;
-
-}
-
-.btn-reset:hover {
-  transition: 0.5s;
-  background-color: #ffa200;
-}
-
-.btn-show {
   text-align: center;
   background-color: #ffb700;
   padding: 8px;
@@ -90,4 +48,5 @@
 .btn-show:hover {
   transition: 0.5s;
   background-color: #ffa200;
+  margin-top:100px;
 }
