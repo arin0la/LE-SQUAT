@@ -3,7 +3,7 @@
 </div>
 <p></p>
 <div>
-  <%= link_to "Back", toilets_path, class: "btn-new" %>
+  <%= link_to "Back", toilets_path, class: "btn-back" %>
 </div>
   <%# put picture here %>
   <%# <div class="card-product">
@@ -19,7 +19,7 @@
 
 
     <div class="description-container">
-      <img src="https://bouncymustard.com/wp-content/uploads/2020/10/2-funny-bathroom-design-fail.jpg" class="my-custom-img"/>
+    <%= cl_image_tag @toilet.photo.key, crop: :fill, class:"my-custom-img" %>
       <div class="card-product">
         <p><strong>Name:</strong> <%= @toilet.name %></p>
         <hr>
@@ -47,10 +47,10 @@
           <%= f.input :name %>
           <%= f.input :description %>
           <%= f.input :price %>
-          <%# <%= f.input :photo, as: :file %>
+          <%= f.input :photo, as: :file %>
           <div class="button-div">
             <%= f.submit "Update", class: "btn-show", data: {turbo_method: :update} %>
-            <%= f.submit "Delete", class: "btn-show", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <%= link_to "Delete", toilet_path(@toilet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-show-delete" %>
           </div>
         <% end %>
       <% end %>
