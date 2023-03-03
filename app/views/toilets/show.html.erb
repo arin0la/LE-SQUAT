@@ -1,7 +1,7 @@
-
 <div class="card-category-no-curve" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.securitysafetyproducts.co.uk/images/upload/products_image2-1672-d.jpg)">
   <h1><%= @toilet.name %></h1>
 </div>
+<p></p>
 <div>
   <%= link_to "Back", toilets_path, class: "btn-back" %>
 </div>
@@ -21,8 +21,11 @@
     <div class="description-container">
     <%= cl_image_tag @toilet.photo.key, crop: :fill, class:"my-custom-img" %>
       <div class="card-product">
-        <p><strong>Name:</strong><%= @toilet.name %></p>
-        <p><strong>Description:</strong><%= @toilet.description %></p>
+        <p><strong>Name:</strong> <%= @toilet.name %></p>
+        <hr>
+        <p><strong>Description:</strong> <%= @toilet.description %>
+        </p>
+        <hr>
         <p><strong>Price:</strong> £<%= @toilet.price %></p>
       </div>
     </div>
