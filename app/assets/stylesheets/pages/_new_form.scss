@@ -24,5 +24,29 @@
 .sign-up {
   color: white;
   text-align: center;
+  background-color: #ffb700;
+  padding: 8px;
+  border: none;
+  // box-shadow: ;
+  border-radius: 15px;
+  color: white;
+  width: 100px;
+
+}
+
+.btn-show-delete{
+  text-align: center;
+  background-color: red;
+  padding: 8px;
+  border: none;
+  // box-shadow: ;
+  border-radius: 15px;
+  color: white;
+  width: 100px;
+}
+
+.btn-show:hover {
+  transition: 0.5s;
+  background-color: #ffa200;
   margin-top:100px;
 }
