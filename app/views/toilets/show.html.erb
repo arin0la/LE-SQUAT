@@ -1,21 +1,21 @@
 
-<div class= "d-flex ">
+<%# <div class= "d-flex ">
   <%= link_to "Back", toilets_path, class: "btn btn-flat" %>
-</div>
+<%# </div> %>
 <div class="card-category-no-curve" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.securitysafetyproducts.co.uk/images/upload/products_image2-1672-d.jpg)">
+  <h1><%= @toilet.name %></h1>
 </div>
 <div>
     <%= link_to "Back", toilets_path, class: "btn btn-flat" %>
   </div>
-  <h1><%= @toilet.name %></h1>
   <%# put picture here %>
-  <div class="card-product">
+  <%# <div class="card-product">
   <img src="https://bouncymustard.com/wp-content/uploads/2020/10/2-funny-bathroom-design-fail.jpg" />
     <div class="card-product-infos">
-      <p><strong><%= @toilet.description %></strong>
-      <p><%= @toilet.price %></p>
-    </div>
-  </div>
+      <%# <p><strong><%= @toilet.description %>
+      <%# <p><%= @toilet.price</p> %>
+    <%# </div>
+  </div>  %>
 
 <div class="container">
   <div class="showpage-container">
@@ -52,8 +52,3 @@
     <%= link_to "Update",  edit_toilet_path(@toilet), class: "btn btn-flat" %>
   </div>
   <% end %>
-
-  <% if current_user != @toilet.user %>
-    <%= link_to "Book", new_toilet_booking_path(@toilet), class: "btn btn-flat" %>
-  <% end %>
-
