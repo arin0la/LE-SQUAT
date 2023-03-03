@@ -34,7 +34,7 @@
           <%= f.input :start_date %>
           <%= f.input :end_date %>
           <div class="button-div">
-            <%= f.submit "Book", class: "btn-new" %>
+            <%= f.submit "Book", class: "btn-show" %>
           </div>
         <% end %>
       <% end %>
@@ -45,8 +45,10 @@
           <%= f.input :description %>
           <%= f.input :price %>
           <%# <%= f.input :photo, as: :file %>
-          <%= f.submit "Update", class: "btn-new", data: {turbo_method: :update} %>
-          <%= f.submit "Delete", class: "btn-new", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <div class="button-div">
+            <%= f.submit "Update", class: "btn-show", data: {turbo_method: :update} %>
+            <%= f.submit "Delete", class: "btn-show", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
         <% end %>
       <% end %>
 
