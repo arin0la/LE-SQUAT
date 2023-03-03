@@ -17,13 +17,13 @@ user = User.create(email: "needtoilet@gmail.com", password: 123456)
 file = URI.open("https://media.istockphoto.com/id/982696006/photo/modern-toilet-with-nature-view-3d-render.jpg?s=612x612&w=0&k=20&c=Xenac1YtWJOCNF8S3xwSAzllT5NNGIW1JZiqWx58uLc=")
 puts "picture saved"
 puts "creating toilets....."
-toilet = Toilet.create(
+toilet = Toilet.new(
   name: "NES",
   description: "A great console",
   price: rand(100),
   user_id: user.id
 )
-toilet.image.attach(io: file, filename: "nes.png", content_type: "image/png")
+toilet.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 toilet.save
 
 puts "toilets created..."
