@@ -50,12 +50,10 @@
           <%# <%= f.input :photo, as: :file %>
           <div class="button-div">
             <%= f.submit "Update", class: "btn-show", data: {turbo_method: :update} %>
-            <%= f.submit "Delete", class: "btn-show", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <%= f.submit "Delete", class: "btn-show-delete", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </div>
         <% end %>
       <% end %>
-
     </div>
-
   </div>
 </div>
