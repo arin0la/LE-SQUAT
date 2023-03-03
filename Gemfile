@@ -39,6 +39,8 @@ gem "font-awesome-sass", "~> 6.1"
 
 gem "faker"
 
+gem "dotenv-rails", groups: [:development, :test]
+
 gem "devise"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
