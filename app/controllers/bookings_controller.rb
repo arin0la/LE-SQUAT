@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
   before_action :set_toilet, only: %i[new create]
 
+
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
   def new
     @booking = Booking.new
   end

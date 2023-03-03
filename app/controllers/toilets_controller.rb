@@ -38,6 +38,10 @@ class ToiletsController < ApplicationController
     redirect_to toilets_path, status: :see_other
   end
 
+  def mytoilet
+    @toilets = Toilet.where(user_id: current_user.id)
+  end
+
   private
 
   def set_toilet

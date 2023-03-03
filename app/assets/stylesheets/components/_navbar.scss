@@ -15,6 +15,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  z-index: 1000;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -34,8 +35,8 @@
   margin-left: 12px;
 }
 
-// .sticky {
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-// }
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}

@@ -1,7 +1,6 @@
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky">
   <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSypi8uogMVmrXJTnChcHXiFzkCrluXpvxkhLOVR533vOkqXWtON4abDCCLuJaI7IdMtbI&usqp=CAU" %>
     <% end %>
 
@@ -12,17 +11,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <li>
+            <%= link_to "All toilets", toilets_path, class: "nav-link"%>
+          </li>
           <li class="nav-item active">
-            <%# <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "My Toilets", mytoilet_path, class: "nav-link"%>
+          </li>
+          <li>
+            <%= link_to "My Bookings", bookings_path, class: "nav-link"%>
+          </li>
+          <li>
+            <%= link_to "Create Toilets", new_toilet_path, class: "nav-link"%>
           </li>
           <li class="nav-item dropdown">
             <i class="fa-regular fa-user avatar icon" id="navbarDropdown" data-bs-toggle="dropdown" data-aria-haspopup="true" data-aria-expanded="false"></i>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
-              <%= link_to "My Toilets", "#", class: "dropdown-item" %>
-              <%= link_to "Create Toilet",new_toilet_path , class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-
             </div>
           </li>
         <% else %>
