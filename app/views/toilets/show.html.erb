@@ -1,3 +1,7 @@
+
+<div class= "d-flex ">
+  <%= link_to "Back", toilets_path, class: "btn btn-flat" %>
+</div>
 <div class="card-category-no-curve" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.securitysafetyproducts.co.uk/images/upload/products_image2-1672-d.jpg)">
 </div>
 <div>
@@ -13,6 +17,31 @@
     </div>
   </div>
 
+<div class="container">
+  <div class="showpage-container">
+
+
+    <div class="description-container">
+      <img src="https://bouncymustard.com/wp-content/uploads/2020/10/2-funny-bathroom-design-fail.jpg" class="my-custom-img"/>
+      <div class="card-product">
+        <p><strong>Name:</strong><%= @toilet.name %></p>
+        <p><strong>Description:</strong><%= @toilet.description %></p>
+        <p><strong>Price:</strong> £<%= @toilet.price %></p>
+      </div>
+    </div>
+
+    <div class="my-customised-settings card-product-booking">
+      <%= simple_form_for [@toilet, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <div class="button-div">
+          <%= f.submit class: "btn-new" %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
 
 
   <% if current_user == @toilet.user %>
@@ -27,3 +56,4 @@
   <% if current_user != @toilet.user %>
     <%= link_to "Book", new_toilet_booking_path(@toilet), class: "btn btn-flat" %>
   <% end %>
+
