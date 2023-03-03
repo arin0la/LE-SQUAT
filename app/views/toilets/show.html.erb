@@ -1,11 +1,11 @@
 
-<div class= "d-flex ">
+<div class= "d-flex">
   <%= link_to "Back", toilets_path, class: "btn btn-flat" %>
 </div>
 <div class="card-category-no-curve" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.securitysafetyproducts.co.uk/images/upload/products_image2-1672-d.jpg)">
 </div>
 <div>
-    <%= link_to "Back", toilets_path, class: "btn btn-flat" %>
+    <%= link_to "Back", toilets_path, class: "btn-new" %>
   </div>
   <h1><%= @toilet.name %></h1>
   <%# put picture here %>
@@ -31,29 +31,48 @@
     </div>
 
     <div class="my-customised-settings card-product-booking">
-      <%= simple_form_for [@toilet, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <div class="button-div">
-          <%= f.submit class: "btn-new" %>
-        </div>
+
+      <% if current_user != @toilet.user %>
+        <%= simple_form_for [@toilet, @booking] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <div class="button-div">
+            <%= f.submit "Book", class: "btn-new" %>
+          </div>
+        <% end %>
       <% end %>
+
+      <div class="card-category-no-curve" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.securitysafetyproducts.co.uk/images/upload/products_image2-1672-d.jpg)">
+        Edit your Toilet
+      </div>
+      <div class="card-category-no-curve" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.securitysafetyproducts.co.uk/images/upload/products_image2-1672-d.jpg)">
+      </div>
+      <% if current_user == @toilet.user %>
+        <%= simple_form_for(@toilet) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%# <%= f.input :photo, as: :file %>
+          <%= f.submit "Update", class: "btn-new", data: {turbo_method: :update} %>
+          <%= f.submit "Delete", class: "btn-new", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
+      <% end %>
+
     </div>
 
   </div>
 </div>
 
 
-  <% if current_user == @toilet.user %>
-    <%= link_to "Delete", toilet_path(@toilet), class: "btn btn-flat",
+  <%# <% if current_user == @toilet.user %>
+    <%# <%= link_to "Delete", toilet_path(@toilet), class: "btn btn-flat",
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
     %>
-  <div>
+  <%# <div>
     <%= link_to "Update",  edit_toilet_path(@toilet), class: "btn btn-flat" %>
-  </div>
-  <% end %>
+  <%# </div> %>
+  <%# <% end %>
 
-  <% if current_user != @toilet.user %>
-    <%= link_to "Book", new_toilet_booking_path(@toilet), class: "btn btn-flat" %>
-  <% end %>
-
+  <%# <% if current_user != @toilet.user %>
+    <%# <%= link_to "Book", new_toilet_booking_path(@toilet), class: "btn btn-flat" %>
+  <%# <% end %>
